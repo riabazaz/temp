@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>66110559835-3dkmgclan01lgmtl9k7hj90n343lrhu4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.66110559835-3dkmgclan01lgmtl9k7hj90n343lrhu4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCvIpAe1QGIzU_1k9bGJ2eEGU3gUvfb3yc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>66110559835</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>zazabair.temp</string>
+	<key>PROJECT_ID</key>
+	<string>temp-e92bc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>temp-e92bc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:66110559835:ios:b4b17b8680ce639f54117e</string>
+	<key>DATABASE_URL</key>
+	<string>https://temp-e92bc.firebaseio.com</string>
+</dict>
+</plist>
