@@ -16,51 +16,66 @@ struct SignView: View {
 
   @State var showSignUpForm = true
   @State var signedIn = false
+  @State private var ready:Bool = false
 
   @ObservedObject var sessionStore = SessionStore()
   @State var profile: UserProfile?
 
   var body: some View {
     NavigationView {
-      VStack {
-        if self.showSignUpForm {
-          Form {
-            Section {
-              TextField("Name", text: $name)
-                .textContentType(.givenName)
-            }
-            Section {
-              TextField("Email", text: $email)
-                .textContentType(.emailAddress)
-                .autocapitalization(.none)
-              SecureField("Password", text: $password)
-              SecureField("Confirm password", text: $confirmPassword)
-            }
-            Button(action: { self.signUp() }) {
-              Text("Sign up")
-            }
-          }
-          .navigationBarTitle("Sign up")
+        if self.ready {
+            ContentView()
+            print("hi")
         }
-        else {
-          Form {
-            TextField("Email", text: $email)
-              .textContentType(.emailAddress)
-              .autocapitalization(.none)
-            SecureField("Password", text: $password)
-            NavigationLink(destination: ContentView(), isActive : $signedIn) {
-                Button(action: { self.signIn() }) {
-                  Text("Sign in")
+        else{
+          VStack {
+            if self.showSignUpForm {
+              Form {
+                Section {
+                  TextField("Name", text: $name)
+                    .textContentType(.givenName)
                 }
+                Section {
+                  TextField("Email", text: $email)
+                    .textContentType(.emailAddress)
+                    .autocapitalization(.none)
+                  SecureField("Password", text: $password)
+                  SecureField("Confirm password", text: $confirmPassword)
+                }
+                NavigationLink(destination: ContentView(), isActive : $signedIn) {
+                    Button(action: { self.signUp() }) {
+                      Text("Sign up")
+                    }
+                }
+                
+              }
+              .navigationBarTitle("Sign up")
+            }
+            else {
+              Form {
+                TextField("Email", text: $email)
+                  .textContentType(.emailAddress)
+                  .autocapitalization(.none)
+                SecureField("Password", text: $password)
+                NavigationLink(destination: ContentView(), isActive : $signedIn) {
+                    Button(action: { self.signIn() }) {
+                      Text("Sign in")
+                    }
+                }
+              }
+            }
+            Button(action: { self.showSignUpForm.toggle() }) {
+              Text(self.showSignUpForm ? "Have an account? Sign in instead." : "No account yet? Click here to sign up instead.")
             }
           }
         }
-        Button(action: { self.showSignUpForm.toggle() }) {
-          Text(self.showSignUpForm ? "Have an account? Sign in instead." : "No account yet? Click here to sign up instead.")
-        }
-      }
-      
     }
+    .onAppear(perform: {
+        self.sessionStore.listen()
+        if self.sessionStore.signedIn{
+            self.ready = true
+        }
+    })
   }
 
   func signUp() {

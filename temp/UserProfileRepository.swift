@@ -11,7 +11,6 @@ import Firebase
 import FirebaseFirestore
 
 struct UserProfile: Codable {
-    
   var uid: String
   var name: String
   var email : String
@@ -41,7 +40,6 @@ class UserProfileRepository: ObservableObject {
      
         let map = try? snapshot?.data()
         let profile = try? UserProfile(uid: (map?["uid"] as! String?)!, name: (map?["name"] as! String?)!, email: (map?["email"] as! String?)!)
-        
         
         completion(profile, error)
     }

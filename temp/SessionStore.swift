@@ -13,8 +13,32 @@ import Firebase
 class SessionStore: ObservableObject {
   @Published var session: User?
   @Published var profile: UserProfile?
+  @Published var didChange = PassthroughSubject<SessionStore, Never>()
+    { didSet { self.didChange.send(self) }}
+  @Published var handle: AuthStateDidChangeListenerHandle?
+    
+  @Published var signedIn : Bool = false
 
   private var profileRepository = UserProfileRepository()
+    
+  func listen () {
+      // monitor authentication changes using firebase
+      handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+        guard let user = user else { return }
+        print("User \(user.uid) signed in.")
+        
+          
+        self.profileRepository.fetchProfile(userId: user.uid) { (profile, error) in
+            if let error = error {
+              print("Error while fetching the user profile: \(error)")
+              return
+            }
+
+            self.profile = profile
+          }
+      }
+
+  }
 
   func signUp(email: String, password: String, name: String, completion: @escaping (_ profile: UserProfile?, _ error: Error?) -> Void) {
     Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
