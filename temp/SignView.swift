@@ -16,15 +16,12 @@ struct SignView: View {
 
   @State var showSignUpForm = true
   @State var signedIn = false
-  @State private var ready:Bool = false
 
-    @EnvironmentObject var sessionStore : SessionStore
+  @EnvironmentObject var sessionStore : SessionStore
   @State var profile: UserProfile?
 
   var body: some View {
-    NavigationView {
-        VStack{
-                
+    NavigationView{
                   VStack {
                     if self.showSignUpForm {
                       Form {
@@ -67,15 +64,9 @@ struct SignView: View {
                       Text(self.showSignUpForm ? "Have an account? Sign in instead." : "No account yet? Click here to sign up instead.")
                     }
                   }
-                
-        }
     }
-    .onAppear(perform: {
-        self.sessionStore.listen()
-        if self.sessionStore.signedIn{
-            self.ready = true
-        }
-    })
+      
+    
   }
 
   func signUp() {

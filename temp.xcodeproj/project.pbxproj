@@ -29,6 +29,7 @@
 		10552AF6245E39C900ED4AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10552AF4245E39C900ED4AB4 /* LaunchScreen.storyboard */; };
 		10552AFE245E3A3900ED4AB4 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10552AFD245E3A3900ED4AB4 /* DashboardView.swift */; };
 		106524AA245E44EC006C5146 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106524A9245E44EC006C5146 /* GreenButton.swift */; };
+		10A5E40E2461BD9500749369 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E40D2461BD9500749369 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		10552B01245E3E7F00ED4AB4 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		106524A9245E44EC006C5146 /* GreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
 		106524AB245E4A93006C5146 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		10A5E40D2461BD9500749369 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		241C791F7A095F8498F17300 /* Pods-temp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-temp.release.xcconfig"; path = "Target Support Files/Pods-temp/Pods-temp.release.xcconfig"; sourceTree = "<group>"; };
 		B207F15FA41DAC015622A31B /* Pods-temp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-temp.debug.xcconfig"; path = "Target Support Files/Pods-temp/Pods-temp.debug.xcconfig"; sourceTree = "<group>"; };
 		B624722F955BC887F87A0F2E /* Pods_temp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_temp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 				10552AE8245E39C300ED4AB4 /* SceneDelegate.swift */,
 				10552AED245E39C300ED4AB4 /* ContentView.swift */,
 				102251B9245F3D9800A88264 /* SignView.swift */,
+				10A5E40D2461BD9500749369 /* RootView.swift */,
 				102251C1245F3EFD00A88264 /* SessionStore.swift */,
 				102251C3245F3F1C00A88264 /* UserProfileRepository.swift */,
 				106524A8245E449D006C5146 /* Dashboard Views */,
@@ -292,6 +295,7 @@
 				10552AE9245E39C300ED4AB4 /* SceneDelegate.swift in Sources */,
 				10552AFE245E3A3900ED4AB4 /* DashboardView.swift in Sources */,
 				102251C4245F3F1C00A88264 /* UserProfileRepository.swift in Sources */,
+				10A5E40E2461BD9500749369 /* RootView.swift in Sources */,
 				102FC346245E51830062AF37 /* CategoryButton.swift in Sources */,
 				10552AEE245E39C300ED4AB4 /* ContentView.swift in Sources */,
 				10552AEC245E39C300ED4AB4 /* temp.xcdatamodeld in Sources */,

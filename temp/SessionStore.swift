@@ -21,14 +21,15 @@ class SessionStore: ObservableObject {
 
   private var profileRepository = UserProfileRepository()
     
-  func listen () {
+    func listen () {
       // monitor authentication changes using firebase
       handle = Auth.auth().addStateDidChangeListener { (auth, user) in
         guard let user = user else { return }
         print("User \(user.uid) signed in.")
         self.signedIn = true
         print("listened")
-          
+        print(self.signedIn)
+        
         self.profileRepository.fetchProfile(userId: user.uid) { (profile, error) in
             if let error = error {
               print("Error while fetching the user profile: \(error)")
