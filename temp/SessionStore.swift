@@ -26,14 +26,14 @@ class SessionStore: ObservableObject {
       handle = Auth.auth().addStateDidChangeListener { (auth, user) in
         guard let user = user else { return }
         print("User \(user.uid) signed in.")
-        
+        self.signedIn = true
+        print("listened")
           
         self.profileRepository.fetchProfile(userId: user.uid) { (profile, error) in
             if let error = error {
               print("Error while fetching the user profile: \(error)")
               return
             }
-
             self.profile = profile
           }
       }
