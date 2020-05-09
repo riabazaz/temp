@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D5D12FED8FA5F77400D824D /* Pods_temp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B624722F955BC887F87A0F2E /* Pods_temp.framework */; };
+		1002BDD3246735810080D624 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002BDD2246735810080D624 /* FormView.swift */; };
 		102251B4245F3A6D00A88264 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 102251B3245F3A6D00A88264 /* GoogleService-Info.plist */; };
 		102251BA245F3D9800A88264 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102251B9245F3D9800A88264 /* SignView.swift */; };
 		102251C2245F3EFD00A88264 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102251C1245F3EFD00A88264 /* SessionStore.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1002BDD2246735810080D624 /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormView.swift; path = ../../../../FormView.swift; sourceTree = "<group>"; };
 		102251B3245F3A6D00A88264 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		102251B7245F3D7F00A88264 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sign.swift; path = Pods/Sign.swift; sourceTree = "<group>"; };
 		102251B9245F3D9800A88264 /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1002BDD1246733AB0080D624 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				102251B9245F3D9800A88264 /* SignView.swift */,
+				10A5E40D2461BD9500749369 /* RootView.swift */,
+				102251C1245F3EFD00A88264 /* SessionStore.swift */,
+				102251C3245F3F1C00A88264 /* UserProfileRepository.swift */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
 		10552ADA245E39C300ED4AB4 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +112,10 @@
 				10552AE6245E39C300ED4AB4 /* AppDelegate.swift */,
 				10552AE8245E39C300ED4AB4 /* SceneDelegate.swift */,
 				10552AED245E39C300ED4AB4 /* ContentView.swift */,
-				102251B9245F3D9800A88264 /* SignView.swift */,
-				10A5E40D2461BD9500749369 /* RootView.swift */,
-				102251C1245F3EFD00A88264 /* SessionStore.swift */,
-				102251C3245F3F1C00A88264 /* UserProfileRepository.swift */,
+				1002BDD1246733AB0080D624 /* Sign */,
 				106524A8245E449D006C5146 /* Dashboard Views */,
 				10552AEF245E39C900ED4AB4 /* Assets.xcassets */,
+				1002BDD2246735810080D624 /* FormView.swift */,
 				10552AF4245E39C900ED4AB4 /* LaunchScreen.storyboard */,
 				10552AF7245E39C900ED4AB4 /* Info.plist */,
 				10552AEA245E39C300ED4AB4 /* temp.xcdatamodeld */,
@@ -288,6 +299,7 @@
 			files = (
 				102251C2245F3EFD00A88264 /* SessionStore.swift in Sources */,
 				10552AE7245E39C300ED4AB4 /* AppDelegate.swift in Sources */,
+				1002BDD3246735810080D624 /* FormView.swift in Sources */,
 				102FC348245E533C0062AF37 /* GreetingPoints.swift in Sources */,
 				102FC34A245E578A0062AF37 /* DashboardGoals.swift in Sources */,
 				102251BA245F3D9800A88264 /* SignView.swift in Sources */,

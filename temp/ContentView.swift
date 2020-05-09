@@ -10,24 +10,25 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
- 
+    @EnvironmentObject var sessionStore : SessionStore
+
     var body: some View {
-        TabView(selection: $selection){
+        TabView(){
             DashboardView()
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("first")
-                        Text("First")
+                        Image("home")
+                        Text("home")
                     }
                 }
                 .tag(0)
-            Text("Second View")
+            FormView()
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image("form")
+                        Text("form")
                     }
                 }
                 .tag(1)

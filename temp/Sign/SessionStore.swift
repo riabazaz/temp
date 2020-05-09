@@ -100,4 +100,24 @@ class SessionStore: ObservableObject {
       print("Error signing out: \(signOutError)")
     }
   }
+   
+    func writePoints(date: Date, overallpoints: Int, steps: Int, waterfloz: Int, waste: Int, CO2: Int, vegservings: Int, meatservings: Int, fruitservings: Int, dairyservings: Int, takeoutmeals: Int, completion: @escaping (_ point: Point?, _ error: Error?) -> Void) {
+        
+        let food = FoodServings(vegservings: vegservings, fruitservings: fruitservings, meatservings: meatservings, dairyservings: dairyservings, takeoutmeals: takeoutmeals)
+        
+        let point = Point(date: date, overallpoints: overallpoints, steps: steps, waterfloz: waterfloz, waste: waste, CO2: CO2, food: food)
+        self.profileRepository.createPoints(profile: self.profile!, point: point) { (point, error) in
+          if let error = error {
+            print("Error while writing the user point: \(error)")
+            completion(nil, error)
+            return
+          }
+            
+          completion(point, nil)
+        }
+        if(point.date == Date()){
+            self.session?.todaypoints = point
+        }
+        
+    }
 }
