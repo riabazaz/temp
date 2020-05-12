@@ -12,16 +12,16 @@ struct RootView: View {
 
     @EnvironmentObject var sessionStore : SessionStore
     var body: some View {
+        
          VStack {
-            Text("hi")
-            if self.sessionStore.signedIn {
+            if self.sessionStore.signedIn{
                 ContentView()
             }
             else {
                 SignView()
             }
                         
-        }
+         }
         
     }
 }

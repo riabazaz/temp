@@ -23,7 +23,16 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
-            FormView()
+            GoalHost()
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image("goal")
+                        Text("goals")
+                    }
+                }
+                .tag(1)
+            FormView(sessionStore: self._sessionStore, steps: String(self.sessionStore.session!.todaypoints.steps), waterfloz: String(self.sessionStore.session!.todaypoints.waterfloz), waste: self.sessionStore.session!.todaypoints.waste, CO2: self.sessionStore.session!.todaypoints.CO2, vegservings: self.sessionStore.session!.todaypoints.vegservings, meatservings: self.sessionStore.session!.todaypoints.meatservings, fruitservings: self.sessionStore.session!.todaypoints.fruitservings, dairyservings: self.sessionStore.session!.todaypoints.dairyservings, takeoutmeals: self.sessionStore.session!.todaypoints.takeoutmeals)
                 .font(.title)
                 .tabItem {
                     VStack {
@@ -31,8 +40,11 @@ struct ContentView: View {
                         Text("form")
                     }
                 }
-                .tag(1)
+                .tag(2)
         }
+    .onAppear(perform: {
+        print(self.sessionStore.session!.todaypoints)
+    })
     }
 }
 
@@ -41,3 +53,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+//sessionStore: self._sessionStore, steps: String(self.sessionStore.session?.todaypoints.steps), waterfloz: String(self.sessionStore.session?.todaypoints.waterfloz), waste: (self.sessionStore.session?.todaypoints.steps)!, CO2: (self.sessionStore.session?.todaypoints.steps)!, vegservings: (self.sessionStore.session?.todaypoints.steps)!, meatservings: (self.sessionStore.session?.todaypoints.steps)!, fruitservings: (self.sessionStore.session?.todaypoints.steps)!, dairyservings: (self.sessionStore.session?.todaypoints.dairyservings)!, takeoutmeals: (self.sessionStore.session?.todaypoints.steps)!

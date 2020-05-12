@@ -10,30 +10,28 @@ import SwiftUI
 
 struct FormView: View {
     @EnvironmentObject var sessionStore : SessionStore
-    @State private var steps : String = "10,000"
-    @State private var waterfloz : String = "100"
-    @State private var waste : Int = 0
-    @State private var CO2 : Int = 0
-    @State private var vegservings : Int = 0
-    @State private var meatservings : Int = 0
-    @State private var fruitservings : Int = 0
-    @State private var dairyservings : Int = 0
-    @State private var takeoutmeals : Int = 0
+    @State  var steps : String
+    @State  var waterfloz : String
+    @State  var waste : Int
+    @State var CO2 : Int
+    @State var vegservings : Int
+    @State var meatservings : Int
+    @State var fruitservings : Int
+    @State  var dairyservings : Int
+    @State  var takeoutmeals : Int 
 
 
     var body: some View {
         VStack{
             Text("Tell us about your day!")
             
-            Form{
+            Form(){
                     TextField("Steps taken", text : $steps)
                      .keyboardType(.numberPad)
-                    Text("Water (fl oz):  \(waterfloz)")
-                    Picker(selection: $waterfloz, label: Text("")) {
-                            ForEach(0 ..< 300) {
-                                Text(String($0))
-                            }
-                    }
+                    TextField("Water (fl oz)", text : $waterfloz)
+                    .keyboardType(.numberPad)
+                
+
                     Stepper(value: $waste, in: 0...100, label: { Text("Number of plastic items: \(waste)")
                     })
                 
@@ -52,41 +50,56 @@ struct FormView: View {
                 
                 Section {
                     Button(action: {
-                        self.write()
+                            self.write()
+                        
                     }){
-                        Rectangle()
+                        ZStack {
+                            Rectangle()
+                            Text("Submit")
+                        }
+                        
                     }
                     
                 }
             }
             
-        }
+        }.onAppear(perform: {
+            self.vegservings = self.sessionStore.session!.todaypoints.vegservings
+        })
+        
 
     }
+        func calcPoints() -> Int{
+            return 30
+        }
+        
+        func calcCO2() -> Int {
+            return 1
+        }
     
     func write(){
-        var dateComponents = DateComponents()
-        dateComponents.setValue(1, for: .day);
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         
-        let now = Date() // Current date
-        let tomorrow = Calendar.current.date(byAdding: dateComponents, to: now)
         
-        sessionStore.writePoints(date: tomorrow!, overallpoints: calcPoints(), steps: Int(self.steps) ?? 10000, waterfloz: Int(self.waterfloz) ?? 100, waste: self.waste, CO2: calcCO2(), vegservings: self.vegservings, meatservings: self.meatservings, fruitservings: self.fruitservings, dairyservings: self.dairyservings, takeoutmeals: self.takeoutmeals) { (point, error) in
-            if let error = error {
-              print("Error when signing up: \(error)")
-              return
-            }
+//        var dateComponents = DateComponents()
+//        dateComponents.setValue(1, for: .day);
+
+        let now = formatter.string(from: Date()) // Current date
+//        let tomorrow = Calendar.current.date(byAdding: dateComponents, to: now)
+        
+        self.sessionStore.writePoints(date: now, overallpoints: self.calcPoints(), steps: Int(self.steps) ?? 10000, waterfloz: Int(self.waterfloz) ?? 100, waste: self.waste, CO2: self.calcCO2(), vegservings: self.vegservings, meatservings: self.meatservings, fruitservings: self.fruitservings, dairyservings: self.dairyservings, takeoutmeals: self.takeoutmeals) { (point, error) in
+                if let error = error {
+                  print("Error when signing up: \(error)")
+                  return
+                }
+            
         }
     }
     
     //function to calculate points
-    func calcPoints() -> Int{
-        return 30
-    }
     
-    func calcCO2() -> Int {
-        return 1
-    }
     //update goals as well!!!!!
     
     
@@ -99,5 +112,6 @@ struct FormView: View {
 //
 //    }
 //}
+
 
 

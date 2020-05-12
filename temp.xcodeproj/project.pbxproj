@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0D5D12FED8FA5F77400D824D /* Pods_temp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B624722F955BC887F87A0F2E /* Pods_temp.framework */; };
-		1002BDD3246735810080D624 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002BDD2246735810080D624 /* FormView.swift */; };
+		1002BDD52467391E0080D624 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002BDD42467391E0080D624 /* FormView.swift */; };
 		102251B4245F3A6D00A88264 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 102251B3245F3A6D00A88264 /* GoogleService-Info.plist */; };
 		102251BA245F3D9800A88264 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102251B9245F3D9800A88264 /* SignView.swift */; };
 		102251C2245F3EFD00A88264 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102251C1245F3EFD00A88264 /* SessionStore.swift */; };
 		102251C4245F3F1C00A88264 /* UserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102251C3245F3F1C00A88264 /* UserProfileRepository.swift */; };
+		102B40392469DB9100E1312C /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B40382469DB9100E1312C /* GoalView.swift */; };
+		102B403B2469DD6200E1312C /* EditGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B403A2469DD6200E1312C /* EditGoalsView.swift */; };
+		102B403D2469DDBE00E1312C /* GoalHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B403C2469DDBE00E1312C /* GoalHost.swift */; };
+		102B40402469E7D400E1312C /* GoalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B403F2469E7D400E1312C /* GoalRow.swift */; };
+		102B4042246A03F400E1312C /* EditGoalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B4041246A03F400E1312C /* EditGoalRow.swift */; };
 		102FC33D245E4C280062AF37 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10552B01245E3E7F00ED4AB4 /* OpenSans-Regular.ttf */; };
 		102FC33E245E4C280062AF37 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10552AFF245E3BDE00ED4AB4 /* Montserrat-Regular.ttf */; };
 		102FC33F245E4C280062AF37 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 106524AB245E4A93006C5146 /* OpenSans-Bold.ttf */; };
@@ -34,12 +39,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1002BDD2246735810080D624 /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormView.swift; path = ../../../../FormView.swift; sourceTree = "<group>"; };
+		1002BDD42467391E0080D624 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		102251B3245F3A6D00A88264 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		102251B7245F3D7F00A88264 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sign.swift; path = Pods/Sign.swift; sourceTree = "<group>"; };
 		102251B9245F3D9800A88264 /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		102251C1245F3EFD00A88264 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		102251C3245F3F1C00A88264 /* UserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepository.swift; sourceTree = "<group>"; };
+		102B40382469DB9100E1312C /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		102B403A2469DD6200E1312C /* EditGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalsView.swift; sourceTree = "<group>"; };
+		102B403C2469DDBE00E1312C /* GoalHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalHost.swift; sourceTree = "<group>"; };
+		102B403F2469E7D400E1312C /* GoalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalRow.swift; sourceTree = "<group>"; };
+		102B4041246A03F400E1312C /* EditGoalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalRow.swift; sourceTree = "<group>"; };
 		102FC341245E4D030062AF37 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		102FC345245E51830062AF37 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		102FC347245E533C0062AF37 /* GreetingPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingPoints.swift; sourceTree = "<group>"; };
@@ -88,6 +98,18 @@
 			path = Sign;
 			sourceTree = "<group>";
 		};
+		102B403E2469DED500E1312C /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				102B403C2469DDBE00E1312C /* GoalHost.swift */,
+				102B40382469DB9100E1312C /* GoalView.swift */,
+				102B403A2469DD6200E1312C /* EditGoalsView.swift */,
+				102B403F2469E7D400E1312C /* GoalRow.swift */,
+				102B4041246A03F400E1312C /* EditGoalRow.swift */,
+			);
+			path = Goals;
+			sourceTree = "<group>";
+		};
 		10552ADA245E39C300ED4AB4 = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +134,11 @@
 				10552AE6245E39C300ED4AB4 /* AppDelegate.swift */,
 				10552AE8245E39C300ED4AB4 /* SceneDelegate.swift */,
 				10552AED245E39C300ED4AB4 /* ContentView.swift */,
+				1002BDD42467391E0080D624 /* FormView.swift */,
+				102B403E2469DED500E1312C /* Goals */,
 				1002BDD1246733AB0080D624 /* Sign */,
 				106524A8245E449D006C5146 /* Dashboard Views */,
 				10552AEF245E39C900ED4AB4 /* Assets.xcassets */,
-				1002BDD2246735810080D624 /* FormView.swift */,
 				10552AF4245E39C900ED4AB4 /* LaunchScreen.storyboard */,
 				10552AF7245E39C900ED4AB4 /* Info.plist */,
 				10552AEA245E39C300ED4AB4 /* temp.xcdatamodeld */,
@@ -299,16 +322,21 @@
 			files = (
 				102251C2245F3EFD00A88264 /* SessionStore.swift in Sources */,
 				10552AE7245E39C300ED4AB4 /* AppDelegate.swift in Sources */,
-				1002BDD3246735810080D624 /* FormView.swift in Sources */,
 				102FC348245E533C0062AF37 /* GreetingPoints.swift in Sources */,
 				102FC34A245E578A0062AF37 /* DashboardGoals.swift in Sources */,
 				102251BA245F3D9800A88264 /* SignView.swift in Sources */,
+				102B403B2469DD6200E1312C /* EditGoalsView.swift in Sources */,
+				1002BDD52467391E0080D624 /* FormView.swift in Sources */,
 				106524AA245E44EC006C5146 /* GreenButton.swift in Sources */,
+				102B40392469DB9100E1312C /* GoalView.swift in Sources */,
+				102B4042246A03F400E1312C /* EditGoalRow.swift in Sources */,
 				10552AE9245E39C300ED4AB4 /* SceneDelegate.swift in Sources */,
 				10552AFE245E3A3900ED4AB4 /* DashboardView.swift in Sources */,
 				102251C4245F3F1C00A88264 /* UserProfileRepository.swift in Sources */,
 				10A5E40E2461BD9500749369 /* RootView.swift in Sources */,
+				102B40402469E7D400E1312C /* GoalRow.swift in Sources */,
 				102FC346245E51830062AF37 /* CategoryButton.swift in Sources */,
+				102B403D2469DDBE00E1312C /* GoalHost.swift in Sources */,
 				10552AEE245E39C300ED4AB4 /* ContentView.swift in Sources */,
 				10552AEC245E39C300ED4AB4 /* temp.xcdatamodeld in Sources */,
 			);
